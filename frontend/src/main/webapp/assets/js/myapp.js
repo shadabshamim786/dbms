@@ -3,13 +3,15 @@ $(function(){
 	
 	switch(menu){
 	
-		case 'About Us':
+		case 'ABOUT':
 			$('#about').addClass('active');
 			break;
-		case 'Contact Us':
+		case 'CONTACT':
 			$('#contact').addClass('active');
 			break;	
-		
+		case 'AllStuffs':
+			$('#product').addClass('active');
+			break;
 		default:
 			$('#home').addClass('active');
 			break;

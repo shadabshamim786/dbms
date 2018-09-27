@@ -51,7 +51,7 @@
 		<div clas="content">
 
 			<c:if test="${HOME==true }">
-				<%@include file="./shared/home.jsp"%>
+				<%@include file="./home.jsp"%>
 			</c:if>
 
 			<c:if test="${ABOUT==true }">
@@ -61,7 +61,14 @@
 			<c:if test="${CONTACT==true }">
 				<%@include file="./contact.jsp"%>
 			</c:if>
-
+			
+			<c:if test="${AllStuffs==true }">
+				<%@include file="./allstuff.jsp"%>
+			</c:if>
+			
+			<c:if test="${CategoryStuffs==true }">
+				<%@include file="./allstuff.jsp"%>
+			</c:if>
 
 		</div>
 
