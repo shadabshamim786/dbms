@@ -25,11 +25,17 @@
 
 <script>
 	window.menu = '${title}';
+	window.contextRoot='${contextRoot}';
 </script>
 
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- DATA-TABLE CSS -->
+<link href="${css}/dataTabes.bootstrap.css" rel="stylesheet">
+
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -69,6 +75,10 @@
 			<c:if test="${CategoryStuffs==true }">
 				<%@include file="./allstuff.jsp"%>
 			</c:if>
+			
+			<c:if test="${SingleStuff==true }">
+				<%@include file="./singlestuff.jsp"%>
+			</c:if>
 
 		</div>
 
@@ -84,7 +94,15 @@
 		<script src="${js}/bootstrap.bundle.min.js"></script>
 
 
-		<!-- My self tried JS -->
+		
+		
+		<!-- datatables -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		
+		
+		
+		
+		
 		<script src="${js}/myapp.js"></script>
 	</div>
 </body>

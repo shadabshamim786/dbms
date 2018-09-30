@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.ss.backend.dao.CategoryDAO;
+import net.ss.backend.dao.ProductDAO;
 import net.ss.backend.dto.Category;
+import net.ss.backend.dto.Product;
 
 @Controller
 public class PageController {
@@ -15,6 +17,9 @@ public class PageController {
 	
 	@Autowired
 	private CategoryDAO categoryDAO;
+	
+	@Autowired
+	private ProductDAO productDAO;
 	
 
 	@RequestMapping(value= {"/home","/","/index"})
@@ -95,5 +100,22 @@ public class PageController {
 			return ret; 
 		}
 	
-	
+	//single product
+		@RequestMapping(value= {"/show/{id}/stuff"})
+		public ModelAndView SIngleStuffs(@PathVariable int id) {
+			ModelAndView ret = new ModelAndView("page");
+			// Adds an objet to be used in home.jsp
+			
+			Product product=new Product();
+			product=productDAO.get(id);
+			
+			ret.addObject("titler", product.getName());
+			
+			//Passing List of Category
+	 		ret.addObject("product", productDAO.get(id));
+					
+			ret.addObject("SingleStuff", true);
+			return ret; 
+		}	
+		
 }

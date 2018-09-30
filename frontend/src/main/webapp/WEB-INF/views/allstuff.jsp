@@ -17,6 +17,13 @@
 
 
 					<c:if test="${AllStuffs==true}">
+					
+					 <script>
+						window.categoryId='';
+					</script> 
+					
+					
+					
 						<ol class="breadcrumb">
 
 							<li><a href="${contextRoot}/home">Home</a>&nbsp/&nbsp </li>
@@ -27,6 +34,11 @@
 					
 					
 					<c:if test="${CategoryStuffs==true}">
+					
+					<script>
+						window.categoryId='${category.categoryid}';
+						
+					</script>
 						<ol class="breadcrumb">
 
 							<li><a href="${contextRoot}/home">Home</a>&nbsp/&nbsp</li>
@@ -38,7 +50,28 @@
 					
 				</div>
 			</div>
-
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<table id="allporducttable" class="table table-striped table-bordered">
+					
+					
+					<thead>
+						<tr>
+							<th></th>
+							<th>Name</th>
+							<th>Brand</th>
+							<th>Price (Rs.)</th>
+							<th>Available Qty.</th>
+							<th></th>
+						</tr>
+						
+					</thead>
+					
+					</table>
+				</div>
+				
+			</div>
 
 		</div>
 
